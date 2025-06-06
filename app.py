@@ -11,7 +11,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Load the model
-model_path = 'C:\web dev\Intern-DSR\model.pkl'
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 app.logger.info(f"Model loaded from {model_path}")
